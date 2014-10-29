@@ -20,13 +20,13 @@ def is_pandigital(d, start = 1, end = 9):
 		used[r - start] += 1
 	return all(used) and sum(used) == end - start + 1
 
-# create primes not exceding n
-def primes(n):
-	array = [True for x in range(0, n + 1)]
-	for i in range(2, int(math.sqrt(n) + 1) + 1):
+# generate primes between start and end [start, end]
+def primes(start, end):
+	array = [True for x in range(0, end + 1)]
+	for i in range(2, int(math.sqrt(end) + 1) + 1):
 		if array[i]:
 			j = i + i
-			while j <= n:
+			while j <= end:
 				array[j] = False
 				j += i
-	return [x for x in range(2, n + 1) if array[x]]
+	return [x for x in range(2, end + 1) if array[x] and x >= start]

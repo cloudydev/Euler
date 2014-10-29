@@ -1,8 +1,4 @@
-def factor(n):
-	t = 1
-	for i in range(1, n + 1):
-		t *= i
-	return t
+import math
 
 def nth(n):
 	digits = [x for x in range(0, 10)]
@@ -11,7 +7,7 @@ def nth(n):
 	remain = n
 	# total 10 digits
 	for i in range(1, 11):
-		t = factor(10 - i) # max permutations with (10 - i) digits
+		t = math.factorial(10 - i) # max permutations with (10 - i) digits
 		for d in [x for x in digits if x not in used_digits]:
 			if remain > t:
 				remain -= t
