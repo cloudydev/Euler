@@ -1,13 +1,16 @@
 import math
 
 # check whether d is a triangle number
-def is_triangle_number(d):
-	double = 2 * d
-	upper = int(math.sqrt(double)) + 1
-	for i in range(1, upper + 1):
-		if i * (i + 1) == double:
-			return True
-	return False
+# k(k + 1) / 2 = n
+def is_triangle_number(n):
+	k = int((math.sqrt(1 + 8 * n) - 1) / 2)
+	return k * (k + 1) // 2 == n
+
+# check whether n is a pentagon number
+# k(3k-1) / 2 = n
+def is_pentagon_number(n):
+	k = int((math.sqrt(1 + 24 * n) + 1) / 6)
+	return k * (3 * k - 1) // 2 == n
 
 # check whether d is a pandigital using consecutive digits [start, end]
 def is_pandigital(d, start = 1, end = 9):
