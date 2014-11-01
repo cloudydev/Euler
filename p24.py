@@ -17,4 +17,4 @@ def nth(n):
 				break
 	return result
 
-print(nth(1000000 ))
+print(nth(1000000))

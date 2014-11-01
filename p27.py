@@ -1,10 +1,5 @@
 import math
-def is_prime(n):
-	if n <= 0:
-		return False
-	if n % 2 == 0 and n > 2:
-		return False
-	return all(n % i for i in range(3, int(math.sqrt(n) + 1), 2))
+import euler
 
 def equation(x, a, b):
 	return x * x + a * x + b
@@ -24,7 +19,7 @@ max_product = 0
 
 # b must be a prime
 
-for b in [x for x in range(2, limit) if is_prime(x)]:
+for b in [x for x in range(2, limit) if euler.is_prime(x)]:
 	for a in range(-limit + 1, limit):
 		if equation(max_len, a, b) <= 0:
 			continue

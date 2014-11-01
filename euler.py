@@ -33,3 +33,11 @@ def primes(start, end):
 				array[j] = False
 				j += i
 	return [x for x in range(2, end + 1) if array[x] and x >= start]
+
+# check whether n is a prime number
+def is_prime(n):
+	if n <= 0:
+		return False
+	if n % 2 == 0 and n > 2:
+		return False
+	return all(n % i for i in range(3, int(math.sqrt(n) + 1), 2))
