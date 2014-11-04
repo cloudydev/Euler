@@ -41,3 +41,12 @@ def is_prime(n):
 	if n % 2 == 0 and n > 2:
 		return False
 	return all(n % i for i in range(3, int(math.sqrt(n) + 1), 2))
+
+# select r from n items
+def combinatoric_select(n, r):
+	if r == 0 or n == r:
+		return 1
+	t = 1;
+	for x in range(r):
+		t *= (n - x)
+	return t // math.factorial(r)
