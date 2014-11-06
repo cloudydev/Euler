@@ -34,6 +34,18 @@ def primes(start, end):
 				j += i
 	return [x for x in range(2, end + 1) if array[x] and x >= start]
 
+# check whether d is palindromic
+def is_palindromic(d):
+	return reverse_digits(d) == d
+
+# reverse digits in d. eg. 1292 -> 2921
+def reverse_digits(d):
+	r = 0
+	while d:
+		r = 10 * r + d % 10
+		d = d // 10
+	return r
+
 # check whether n is a prime number
 def is_prime(n):
 	if n <= 0:
