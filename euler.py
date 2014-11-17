@@ -62,3 +62,17 @@ def combinatoric_select(n, r):
 	for x in range(r):
 		t *= (n - x)
 	return t // math.factorial(r)
+
+# return the number of digits
+def digit_length(d):
+	l = 0
+	while d:
+		l += 1
+		d = d // 10
+	return l
+
+
+
+
+
+
